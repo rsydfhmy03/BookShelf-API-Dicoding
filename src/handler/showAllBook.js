@@ -3,9 +3,9 @@ const books = require("../books");
 /**
  * Returns a response object containing a list of books based on the provided query parameters.
  *
- * @param {Object} request - the request object containing the query parameters.
- * @param {Object} h - the response toolkit object.
- * @return {Object} a response object containing a list of books.
+ * @param {Object} request - The request object containing the query parameters.
+ * @param {Object} h - The response toolkit object.
+ * @return {Object} A response object containing a list of books.
  */
 const showAllBooks = (request, h) => {
   const { name, reading, finished } = request.query;
@@ -32,22 +32,19 @@ const showAllBooks = (request, h) => {
   }
 
   // Format the response data
-  const formattedBooks = filteredBooks.map((b) => ({
-    id: b.id,
-    name: b.name,
-    publisher: b.publisher,
+  const booksData = filteredBooks.map(({ id, name, publisher }) => ({
+    id,
+    name,
+    publisher,
   }));
 
-  // Create response object
-  const response = h.response({
-    status: "success",
-    data: {
-      books: formattedBooks,
-    },
-  });
-
-  response.code(200);
-  return response;
+  // Create and return the response object
+  return h
+    .response({
+      status: "success",
+      data: { books: booksData },
+    })
+    .code(200);
 };
 
 module.exports = showAllBooks;
