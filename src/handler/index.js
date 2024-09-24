@@ -1,15 +1,10 @@
-const getIndex = require("./getIndex");
-const addBook = require("./addBook");
-const showAllBooks = require("./showAllBook");
-const getBookById = require("./getBookById");
-const editBookById = require("./editBookById");
-const deleteBookById = require("./deleteBookById");
+const BookHandler = require("./BookHandler");
 
 module.exports = {
-  getIndex,
-  addBook,
-  showAllBooks,
-  getBookById,
-  editBookById,
-  deleteBookById,
+  getIndex: BookHandler.getIndex,
+  addBook: BookHandler.addBook,
+  showAllBooks: BookHandler.showAllBooks,
+  getBookById: BookHandler.getBookById,
+  editBookById: BookHandler.editBookById,
+  deleteBookById: BookHandler.deleteBookById,
 };
