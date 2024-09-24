@@ -2,8 +2,21 @@ const BookService = require("../services/BookService");
 const BookValidator = require("../validator/BookValidator");
 const ResponseFormatter = require("../responseFormatter");
 
-const getIndex = (request, h) =>
-  ResponseFormatter.success(h, "Welcome to Bookshelf API by Mitahudev03");
+const getIndex = (request, h) => {
+  const apiInfo = {
+    name: "Bookshelf API",
+    version: "1.0.0",
+    author: "Mitahudev03 (Fahmy Rosyadi )",
+    status: "Active Student",
+    school: "Politeknik Negeri Jember",
+  };
+
+  return ResponseFormatter.success(
+    h,
+    "Welcome to Bookshelf API by Mitahudev03",
+    { data: apiInfo }
+  );
+};
 
 const addBook = (request, h) => {
   try {
