@@ -1,4 +1,3 @@
-// const { getIndex } = require("./handler");
 const handler = require("./handler");
 
 const routes = [
