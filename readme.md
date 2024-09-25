@@ -38,12 +38,13 @@ Before you begin, ensure you have the following installed:
 
 - [Node.js](https://nodejs.org/) (LTS version)
 - [NPM](https://www.npmjs.com/) (Node package manager, which comes with Node.js)
+- [BUN](https://bun.sh/) (JavaScript runtime, package manager, test runner and bundler built from scratch using the Zig programming language.)
 
 ### Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/bookshelf-api.git
+   git clone https://github.com/rsydfhmy03/BookShelf-API-Dicoding.git
    ```
    
 2. Navigate to the project directory:
@@ -54,6 +55,11 @@ Before you begin, ensure you have the following installed:
 3. Install the dependencies:
    ```bash
    npm install
+   ```
+
+   or 
+      ```bash
+   bun install
    ```
 
 ### Running the API
@@ -71,7 +77,13 @@ By default, the API will run on `http://localhost:3000`.
 To run tests for the API, you can use:
 
 ```bash
-npm run test
+npm run start-dev
+```
+
+Or :
+
+```bash
+bun run start-dev
 ```
 
 ## API Endpoints
